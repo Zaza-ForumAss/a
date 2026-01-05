@@ -62,9 +62,6 @@ ToggleButton.MouseButton1Click:Connect(function()
     end
 end)
 
-local function ToggleGui()
-    MainFrame.Visible = not MainFrame.Visible
-end
 
 -- Function to get the closest target to the mouse
 local function GetClosestTarget()
@@ -93,11 +90,7 @@ end
 UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
     if gameProcessedEvent then return end
 
-    if input.KeyCode == Enum.KeyCode.Insert then
-        ToggleGui()
-    end
-
-    if AimbotEnabled and input.KeyCode == AimKey then
+        if AimbotEnabled and input.KeyCode == AimKey then
         IsAiming = true
     end
 end)
